@@ -166,9 +166,9 @@ func main() {
 	log.Printf("Server starting on http://localhost:%d", config.Port)
 	srv := &http.Server{
 		Addr:           fmt.Sprintf(":%d", config.Port),
-		ReadTimeout:    15 * time.Second,
-		WriteTimeout:   30 * time.Second,
-		IdleTimeout:    60 * time.Second,
+		ReadTimeout:    360 * time.Second,
+		WriteTimeout:   600 * time.Second,
+		IdleTimeout:    180 * time.Second,
 		MaxHeaderBytes: 1 << 20,
 	}
 	if err := srv.ListenAndServe(); err != nil {
